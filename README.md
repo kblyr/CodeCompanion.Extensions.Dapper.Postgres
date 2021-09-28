@@ -9,7 +9,7 @@ Presenting the **QueryRefcursors(...)** extension method. The method expects a *
 ## Example
 In this example, the *User* has many *Roles* which has many *Permissions*
 
-We wan't to make 1 database call to fetch the following:
+We wan't to make 1 database call (not really 1 call hehe :P) to fetch the following:
 * Id and Username of the user
 * Id and Name of Roles which the User has
 * Id and Name of Permissions which the User has (we will traverse this using: UserRole.UserId = RolePermission.RoleId -> RolePermission.PermissionId -> Permission.Id)
