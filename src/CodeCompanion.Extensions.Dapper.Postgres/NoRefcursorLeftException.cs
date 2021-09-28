@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace CodeCompanion
+namespace CodeCompanion.Extensions.Dapper.Postgres
 {
     public class NoRefcursorLeftException : Exception
     {

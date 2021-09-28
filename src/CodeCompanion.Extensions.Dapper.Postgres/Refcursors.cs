@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Npgsql;
 
-namespace CodeCompanion
+namespace CodeCompanion.Extensions.Dapper.Postgres
 {
     public class Refcursors : IEnumerable<string>
     {
