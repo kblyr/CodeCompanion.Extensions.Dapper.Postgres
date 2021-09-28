@@ -33,7 +33,7 @@ Assuming you have 5 tables in the database
     * **PermissionId** | FK: *Permission.Id*
 
 ### PostgreSQL (PL/PGSQL)
-``` postgres
+``` sql
 CREATE OR REPLACE FUNCTION "get_user_with_roles_and_permissions"("user__id" INTEGER)
 RETURNS SETOF REFCURSOR AS
 $BODY$
