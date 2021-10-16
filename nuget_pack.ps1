@@ -1,0 +1,1 @@
+dotnet pack src/Exceptions --configuration Release --output ../.nuget_releases/
