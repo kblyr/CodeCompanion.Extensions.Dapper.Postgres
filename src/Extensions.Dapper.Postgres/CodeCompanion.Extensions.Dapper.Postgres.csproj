@@ -7,12 +7,14 @@
 
     <!-- NuGet Package Info -->
     <PackageId>CodeCompanion.Extensions.Dapper.Postgres</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.5</Version>
     <Authors>John Josua Paderon</Authors>
-    <Company>CodeCompanion.Extensions.Dapper.Postgres</Company>
+    <Company>CodeCompanion Libraries</Company>
     <Copyright>Copyright 2021 (c) John Josua Paderon</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/kblyr/CodeCompanion.Extensions.Dapper.Postgres</RepositoryUrl>
+    <Description>CodeCompanion.Extensions.Dapper.Postgres</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/kblyr/CodeCompanion.Extensions.Dapper.Postgres/main/assets/logo.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
