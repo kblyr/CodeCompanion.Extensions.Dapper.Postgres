@@ -1,1 +1,1 @@
-dotnet pack src/Exceptions --configuration Release --output ../.nuget_releases/
+dotnet pack src/Extensions.Dapper.Postgres --configuration Release --output ../.nuget_releases/
