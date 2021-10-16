@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Dapper;
 using Npgsql;
 
@@ -27,7 +23,7 @@ namespace CodeCompanion.Extensions.Dapper.Postgres
 
         private bool MoveNext() => _enumerator.MoveNext();
 
-        private string GetCurrentScript() => GetFetchAllInScript(_enumerator.Current);
+        string GetCurrentScript() => GetFetchAllInScript(_enumerator.Current);
 
         public IEnumerable<T> Read<T>()
         {
@@ -109,7 +105,7 @@ namespace CodeCompanion.Extensions.Dapper.Postgres
             throw new NoRefcursorLeftException();
         }
 
-        public T ReadFirstOrDefault<T>(Type[] types, Func<object[], T> map) => Read<T>(types, map).FirstOrDefault();
+        public T? ReadFirstOrDefault<T>(Type[] types, Func<object[], T> map) => Read<T>(types, map).FirstOrDefault();
 
         public async Task<T> ReadFirstOrDefaultAsync<T>()
         {
@@ -119,9 +115,9 @@ namespace CodeCompanion.Extensions.Dapper.Postgres
             throw new NoRefcursorLeftException();
         }
 
-        public async Task<T> ReadFirstOrDefaultAsync<T>(Type[] types, Func<object[], T> map) => (await ReadAsync<T>(types, map)).FirstOrDefault();
+        public async Task<T?> ReadFirstOrDefaultAsync<T>(Type[] types, Func<object[], T> map) => (await ReadAsync<T>(types, map)).FirstOrDefault();
 
-        public T ReadSingleOrDefault<T>()
+        public T? ReadSingleOrDefault<T>()
         {
             if (MoveNext())
                 return _connection.QuerySingleOrDefault<T>(GetCurrentScript(), transaction: _transaction);
@@ -129,9 +125,9 @@ namespace CodeCompanion.Extensions.Dapper.Postgres
             throw new NoRefcursorLeftException();
         }
 
-        public T ReadSingleOrDefault<T>(Type[] types, Func<object[], T> map) => Read<T>(types, map).SingleOrDefault();
+        public T? ReadSingleOrDefault<T>(Type[] types, Func<object[], T> map) => Read<T>(types, map).SingleOrDefault();
 
-        public async Task<T> ReadSingleOrDefaultAsync<T>()
+        public async Task<T?> ReadSingleOrDefaultAsync<T>()
         {
             if (MoveNext())
                 return await _connection.QuerySingleOrDefaultAsync<T>(GetCurrentScript(), transaction: _transaction);
@@ -139,8 +135,8 @@ namespace CodeCompanion.Extensions.Dapper.Postgres
             throw new NoRefcursorLeftException();
         }
 
-        public async Task<T> ReadSingleOrDefaultAsync<T>(Type[] types, Func<object[], T> map) => (await ReadAsync<T>(types, map)).SingleOrDefault();
+        public async Task<T?> ReadSingleOrDefaultAsync<T>(Type[] types, Func<object[], T> map) => (await ReadAsync<T>(types, map)).SingleOrDefault();
 
-        private static string GetFetchAllInScript(string refcursorName) => $"FETCH ALL IN \"{refcursorName}\"";
+        static string GetFetchAllInScript(string refcursorName) => $"FETCH ALL IN \"{refcursorName}\"";
     }
 }
