@@ -1,6 +1,7 @@
 # CodeCompanion.Extensions.Dapper.Postgres
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kblyr/CodeCompanion.Extensions.Dapper.Postgres?color=white&logo=github)](https://github.com/kblyr/CodeCompanion.Extensions.Dapper.Postgres)
 [![Nuget version (CodeCompanion.Extensions.Dapper.Postgres)](https://img.shields.io/nuget/v/CodeCompanion.Extensions.Dapper.Postgres?logo=nuget)](https://www.nuget.org/packages/CodeCompanion.Extensions.Dapper.Postgres)
+[![GitHub](https://img.shields.io/github/license/kblyr/CodeCompanion.Extensions.Dapper.Postgres)](https://raw.githubusercontent.com/kblyr/CodeCompanion.Extensions.Dapper.Postgres/main/LICENSE)
 
 Dapper supports Multiple result set, but PostgreSQL didn't. PostgreSQL has **REFCURSOR** but Dapper doesn't support it. So this simple and small library fills the gap.
 
